@@ -739,7 +739,7 @@
         <div class="spacing"></div>
         <div class="posts">
           <div class="large-6 columns">
-            <div class="post featured">
+            <div class="post featured" id="blog-posts">
               <div class="post-desc">
                 <p class="info-author">
                   <span>
@@ -766,6 +766,7 @@
               </div>
             </div>
           </div>
+          <!--
           <div class="large-6 columns">
             <div class="post">
               <div class="post-desc">
@@ -954,7 +955,7 @@
                 <div class="post-image post-image-8"></div>
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
         <div class="large-12 columns">
           <div class="four spacing"></div>
@@ -1112,7 +1113,7 @@
 
     jQuery(document).ready(function () {
       $.get(
-        ghost.url.api('posts', {limit: 3})
+        ghost.url.api('posts', {limit: 6, filter: "featured: true", order: "published_at desc"})
       ).done(onSuccess);
     });
     </script>
