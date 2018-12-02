@@ -747,7 +747,7 @@
                     <a href="#" id="authors-posts"></a>
                   </span>
                 </p>
-                <h2 id="title-posts"><a id="slug-posts" href=""></a></h2>
+                <h2 id="title-posts"><a href="https://blog.dvrg.me/" id="slug-posts"></a></h2>
                 <p class="info-others">
                   <span>15/11/2017</span>
                   <span>
@@ -1106,7 +1106,8 @@
       var $title = $('#title-posts');
       var $tags = $('#tags-posts');
       var $authors = $('#authors-posts')
-      var $slug = $('#slug-posts')
+      //var $slug = $('#slug-posts')
+      document.getElementById("slug-posts").href = $slug;
       $.each(data.posts, function (i, post) {
         $title.append(
           post.title
