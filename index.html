@@ -1124,11 +1124,8 @@
     }  
 
     jQuery(document).ready(function () {
-      $.get(ghost.url.api('posts', {limit:6, include:"authors", filter:"featured:true", order:"published_at desc", resource:"slug"})).done(function (data){
-        console.log('posts', data.posts);
-      }).fail(function (err){
-        console.log(err);
-      });
+      $.get(ghost.url.api('posts', {limit:6, include:"authors", filter:"featured:true", order:"published_at desc", resource:"slug"})
+      ).done(onSuccess);
     });
     </script>
   </body>
