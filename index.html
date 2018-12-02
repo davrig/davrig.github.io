@@ -739,19 +739,19 @@
         <div class="spacing"></div>
         <div class="posts">
           <div class="large-6 columns">
-            <div class="post featured" id="blog-posts">
+            <div class="post featured">
               <div class="post-desc">
                 <p class="info-author">
                   <span>
                     Posted by
-                    <a href="#">admin</a>
+                    <a href="#" id="users-post"></a>
                   </span>
                 </p>
-                <h2><a href="single.html">You don’t take a photograph, you make it.</a></h2>
+                <h2 id="title-posts"><a href="single.html"></a></h2>
                 <p class="info-others">
                   <span>15/11/2017</span>
                   <span>
-                    In <a href="#" rel="category tag">Design</a>
+                    In <a href="#" rel="category tag" id="tags-posts"></a>
                   </span>
                   <span>
                     <a href="#">0 Comments</a>
@@ -1103,10 +1103,18 @@
     });
 
     function onSuccess(data) {
-      var $result = $('#blog-posts');
+      var $title = $('#title-posts');
+      var $tags = $('#tags-posts');
+      var $users = $('#users-posts')
       $.each(data.posts, function (i, post) {
-        $result.append(
-          '<li>' + post.title + '</li>'
+        $title.append(
+          post.title
+        );
+        $tags.append(
+          post.tags
+        );
+        $posts.append(
+          post.users
         );
       });
     }  
