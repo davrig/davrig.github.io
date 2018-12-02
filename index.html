@@ -744,7 +744,7 @@
                 <p class="info-author">
                   <span>
                     Posted by
-                    <a href="#" id="users-post"></a>
+                    <a href="#" id="users-posts"></a>
                   </span>
                 </p>
                 <h2 id="title-posts"><a href="single.html"></a></h2>
@@ -1121,7 +1121,7 @@
 
     jQuery(document).ready(function () {
       $.get(
-        ghost.url.api('posts', {limit: 6, filter: "featured: true", order: "published_at desc"})
+        ghost.url.api('posts', {limit: 6, include: tags, filter: "featured: true", order: "published_at desc"})
       ).done(onSuccess);
     });
     </script>
