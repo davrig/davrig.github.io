@@ -1103,11 +1103,11 @@
     });
 
     function onSuccess(data) {
-      var address = 'https://blog.dvrg.me/'
+      var $address = 'https://blog.dvrg.me/'
       var $title = $('#title-posts');
       var $tags = $('#tags-posts');
       var $authors = $('#authors-posts')
-      var $slug
+      document.getElementById("slug-posts").href = $address + $slug;
       
       $.each(data.posts, function (i, post) {
         $title.append(
@@ -1123,7 +1123,7 @@
           post.slug
         );
       });
-      document.getElementById("slug-posts").href = address + $slug;
+      
     }  
 
     jQuery(document).ready(function () {
