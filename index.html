@@ -747,7 +747,7 @@
                     <a href="#" id="authors-posts"></a>
                   </span>
                 </p>
-                <h2 id="title-posts"><a href="https://blog.dvrg.me/" id="slug-posts"></a></h2>
+                <h2 id="title-posts"><a id="slug-posts"></a></h2>
                 <p class="info-others">
                   <span>15/11/2017</span>
                   <span>
@@ -1103,11 +1103,12 @@
     });
 
     function onSuccess(data) {
+      var address = 'https://blog.dvrg.me/'
       var $title = $('#title-posts');
       var $tags = $('#tags-posts');
       var $authors = $('#authors-posts')
-      //var $slug = $('#slug-posts')
-      document.getElementById("slug-posts").href = $slug;
+      var $slug
+      
       $.each(data.posts, function (i, post) {
         $title.append(
           post.title
@@ -1122,6 +1123,7 @@
           post.slug
         );
       });
+      document.getElementById("slug-posts").href = address + $slug;
     }  
 
     jQuery(document).ready(function () {
