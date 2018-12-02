@@ -1121,7 +1121,7 @@
 
     jQuery(document).ready(function () {
       $.get(
-        ghost.url.api('posts', {limit: 6, include: "tags", filter: "featured: true", order: "published_at desc"})
+        ghost.url.api('posts', {limit: 6, include= "authors,tags", filter= "featured: true", order: "published_at desc"})
       ).done(onSuccess);
     });
     </script>
