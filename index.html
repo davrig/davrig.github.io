@@ -744,10 +744,10 @@
                 <p class="info-author">
                   <span>
                     Posted by
-                    <a href="#" id="users-posts"></a>
+                    <a href="#" id="authors-posts"></a>
                   </span>
                 </p>
-                <h2 id="title-posts"><a href="single.html"></a></h2>
+                <h2 id="title-posts"><a id="slug-posts" href=""></a></h2>
                 <p class="info-others">
                   <span>15/11/2017</span>
                   <span>
@@ -1105,7 +1105,8 @@
     function onSuccess(data) {
       var $title = $('#title-posts');
       var $tags = $('#tags-posts');
-      var $users = $('#users-posts')
+      var $authors = $('#authors-posts')
+      var $slug = $('#slug-posts')
       $.each(data.posts, function (i, post) {
         $title.append(
           post.title
@@ -1113,15 +1114,18 @@
         $tags.append(
           post.tags
         );
-        $users.append(
-          post.users
+        $authors.append(
+          post.authors
+        );
+        $slug.append(
+          post.slug
         );
       });
     }  
 
     jQuery(document).ready(function () {
       $.get(
-        ghost.url.api('posts', {limit: 6, include= "authors,tags", filter= "featured: true", order: "published_at desc"})
+        ghost.url.api('posts', {limit:6, include="authors,tags", filter="featured:true", order:"published_at desc", resource:"slug"})
       ).done(onSuccess);
     });
     </script>
